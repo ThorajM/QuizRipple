@@ -185,15 +185,13 @@ const Results = ({ onError, onSuccess }) => {
       insights.push({
         type: 'success',
         title: 'Congratulations!',
-        message: `You passed the quiz with ${percentage}% score!`,
-        icon: '🎉'
+        message: `You passed the quiz with ${percentage}% score!`
       });
     } else {
       insights.push({
         type: 'warning',
         title: 'Keep Learning!',
-        message: `You scored ${percentage}%. The passing score is ${results.quizConfig?.passingScore || 70}%.`,
-        icon: '📚'
+        message: `You scored ${percentage}%. The passing score is ${results.quizConfig?.passingScore || 70}%.`
       });
     }
 
@@ -203,14 +201,13 @@ const Results = ({ onError, onSuccess }) => {
         type: 'info',
         title: 'Speed Master!',
         message: `You averaged ${avgTimePerQuestion}s per question. Excellent time management!`,
-        icon: '⚡'
+         
       });
     } else if (avgTimePerQuestion > 120) {
       insights.push({
         type: 'warning',
         title: 'Time Management',
-        message: `You averaged ${avgTimePerQuestion}s per question. Consider practicing faster recall.`,
-        icon: '⏰'
+        message: `You averaged ${avgTimePerQuestion}s per question. Consider practicing faster recall.`
       });
     }
 
@@ -220,15 +217,13 @@ const Results = ({ onError, onSuccess }) => {
       insights.push({
         type: 'success',
         title: 'Complete Attempt!',
-        message: 'You answered all questions. Great thoroughness!',
-        icon: '✅'
+        message: 'You answered all questions. Great thoroughness!'
       });
     } else if (completionRate < 70) {
       insights.push({
         type: 'warning',
         title: 'Incomplete Attempt',
-        message: `You answered ${completionRate}% of questions. Try to complete more questions next time.`,
-        icon: '⚠️'
+        message: `You answered ${completionRate}% of questions. Try to complete more questions next time.`
       });
     }
 
@@ -239,14 +234,13 @@ const Results = ({ onError, onSuccess }) => {
         type: 'success',
         title: 'High Accuracy!',
         message: `${accuracy}% accuracy on answered questions. Excellent knowledge!`,
-        icon: '🎯'
       });
     } else if (accuracy < 60) {
       insights.push({
         type: 'info',
         title: 'Focus on Accuracy',
         message: `${accuracy}% accuracy. Consider reviewing concepts before attempting.`,
-        icon: '📖'
+        
       });
     }
 
@@ -472,7 +466,7 @@ const Results = ({ onError, onSuccess }) => {
               🔄 Retry
             </button>
             <button onClick={goHome} className="btn btn-outline">
-              🏠 Go Home
+              Go Home
             </button>
           </div>
         </div>
@@ -490,10 +484,10 @@ const Results = ({ onError, onSuccess }) => {
           <p>No quiz results to display. Please take a quiz first.</p>
           <div className="error-actions">
             <button onClick={() => navigate('/quiz')} className="btn btn-primary">
-              📝 Take Quiz
+              Take Quiz
             </button>
             <button onClick={goHome} className="btn btn-outline">
-              🏠 Go Home
+              Go Home
             </button>
           </div>
         </div>
@@ -521,15 +515,15 @@ const Results = ({ onError, onSuccess }) => {
       {/* Header */}
       <div className="results-header">
         <div className="header-content">
-          <h1>📊 Quiz Results</h1>
+          <h1>Quiz Results</h1>
           <div className="header-info">
             <span className="quiz-title">{results.quizConfig?.title || 'Quiz Results'}</span>
             <span className="student-name">👤 {results.student?.name || user?.name || 'User'}</span>
             <span className="submit-date">
-              📅 {new Date(results.timing?.submitTime || Date.now()).toLocaleDateString()}
+              {new Date(results.timing?.submitTime || Date.now()).toLocaleDateString()}
             </span>
             <span className="submit-time">
-              🕐 {new Date(results.timing?.submitTime || Date.now()).toLocaleTimeString()}
+              {new Date(results.timing?.submitTime || Date.now()).toLocaleTimeString()}
             </span>
           </div>
         </div>
@@ -547,21 +541,21 @@ const Results = ({ onError, onSuccess }) => {
               </>
             ) : (
               <>
-                📄 <span>Export</span>
+                <span>Export</span>
               </>
             )}
           </button>
           <button onClick={shareResults} className="action-btn share-btn">
-            📤 <span>Share</span>
+            <span>Share</span>
           </button>
           <button onClick={viewAllResults} className="action-btn history-btn">
-            📈 <span>View History</span>
+            <span>View History</span>
           </button>
           <button onClick={retakeQuiz} className="action-btn retake-btn">
-            🔄 <span>Retake</span>
+            <span>Retake</span>
           </button>
           <button onClick={goHome} className="action-btn home-btn">
-            🏠 <span>Home</span>
+            <span>Home</span>
           </button>
         </div>
       </div>
@@ -615,7 +609,7 @@ const Results = ({ onError, onSuccess }) => {
       {/* Performance Insights */}
       {performanceInsights && performanceInsights.length > 0 && (
         <div className="insights-section">
-          <h3>💡 Performance Insights</h3>
+          <h3>Performance Insights</h3>
           <div className="insights-grid">
             {performanceInsights.map((insight, index) => (
               <div key={index} className={`insight-card ${insight.type}`}>
@@ -633,7 +627,7 @@ const Results = ({ onError, onSuccess }) => {
       {/* Advanced Statistics */}
       {performanceStats && (
         <div className="advanced-stats-section">
-          <h3>📊 Advanced Statistics</h3>
+          <h3>Advanced Statistics</h3>
           <div className="advanced-stats-grid">
             <div className="stat-card">
               <div className="stat-icon">🎯</div>
@@ -652,7 +646,7 @@ const Results = ({ onError, onSuccess }) => {
               </div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">📈</div>
+              <div className="stat-icon"></div>
               <div className="stat-content">
                 <div className="stat-value">{performanceStats.completionRate}%</div>
                 <div className="stat-label">Completion Rate</div>
@@ -660,7 +654,7 @@ const Results = ({ onError, onSuccess }) => {
               </div>
             </div>
             <div className="stat-card">
-              <div className="stat-icon">⏰</div>
+              <div className="stat-icon"></div>
               <div className="stat-content">
                 <div className="stat-value">{performanceStats.timeEfficiency}%</div>
                 <div className="stat-label">Time Efficiency</div>
@@ -678,25 +672,25 @@ const Results = ({ onError, onSuccess }) => {
             className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
             onClick={() => setActiveTab('overview')}
           >
-            📈 Overview
+            Overview
           </button>
           <button 
             className={`tab-btn ${activeTab === 'analytics' ? 'active' : ''}`}
             onClick={() => setActiveTab('analytics')}
           >
-            📊 Analytics
+            Analytics
           </button>
           <button 
             className={`tab-btn ${activeTab === 'questions' ? 'active' : ''}`}
             onClick={() => setActiveTab('questions')}
           >
-            📝 Questions ({filteredQuestions.length})
+            Questions ({filteredQuestions.length})
           </button>
           <button 
             className={`tab-btn ${activeTab === 'timing' ? 'active' : ''}`}
             onClick={() => setActiveTab('timing')}
           >
-            ⏱️ Timing
+            ⏱Timing
           </button>
         </div>
 
@@ -706,7 +700,7 @@ const Results = ({ onError, onSuccess }) => {
             <div className="tab-pane">
               <div className="overview-grid">
                 <div className="overview-card">
-                  <h4>📊 Score Breakdown</h4>
+                  <h4>Score Breakdown</h4>
                   <div className="breakdown-item">
                     <span>Total Score:</span>
                     <span>{results.totalScore || 0} / {results.maxScore || 0} points</span>
@@ -736,7 +730,7 @@ const Results = ({ onError, onSuccess }) => {
                 </div>
 
                 <div className="overview-card">
-                  <h4>📈 Performance Summary</h4>
+                  <h4>Performance Summary</h4>
                   <div className="breakdown-item">
                     <span>Questions Answered:</span>
                     <span>{answeredQuestions} / {totalQuestions}</span>
@@ -762,7 +756,7 @@ const Results = ({ onError, onSuccess }) => {
                 </div>
 
                 <div className="overview-card">
-                  <h4>⏰ Time Analysis</h4>
+                  <h4>Time Analysis</h4>
                   <div className="breakdown-item">
                     <span>Total Time:</span>
                     <span>{results.timing?.totalTimeSpentFormatted || '0:00'}</span>
@@ -795,7 +789,7 @@ const Results = ({ onError, onSuccess }) => {
                 {/* Difficulty Breakdown */}
                 {results.analytics?.difficultyBreakdown && Object.keys(results.analytics.difficultyBreakdown).length > 0 && (
                   <div className="analytics-card">
-                    <h4>📊 Performance by Difficulty</h4>
+                    <h4>Performance by Difficulty</h4>
                     <div className="analytics-list">
                       {Object.entries(results.analytics.difficultyBreakdown).map(([difficulty, stats]) => (
                         <div key={difficulty} className="analytics-item">
@@ -822,7 +816,7 @@ const Results = ({ onError, onSuccess }) => {
                 {/* Category Breakdown */}
                 {results.analytics?.categoryBreakdown && Object.keys(results.analytics.categoryBreakdown).length > 0 && (
                   <div className="analytics-card">
-                    <h4>📚 Performance by Category</h4>
+                    <h4>Performance by Category</h4>
                     <div className="analytics-list">
                       {Object.entries(results.analytics.categoryBreakdown).map(([category, stats]) => (
                         <div key={category} className="analytics-item">
@@ -848,7 +842,7 @@ const Results = ({ onError, onSuccess }) => {
 
                 {/* Time Analysis */}
                 <div className="analytics-card full-width">
-                  <h4>⏱️ Detailed Time Analysis</h4>
+                  <h4>⏱Detailed Time Analysis</h4>
                   <div className="time-stats">
                     <div className="time-stat">
                       <span className="time-label">Total Duration:</span>
@@ -890,7 +884,7 @@ const Results = ({ onError, onSuccess }) => {
           {activeTab === 'questions' && (
             <div className="tab-pane">
               <div className="questions-header">
-                <h4>📝 Question-by-Question Analysis</h4>
+                <h4>Question-by-Question Analysis</h4>
                 <div className="questions-controls">
                   <button 
                     onClick={() => setShowDetails(!showDetails)}
@@ -1002,7 +996,7 @@ const Results = ({ onError, onSuccess }) => {
             <div className="tab-pane">
               <div className="timing-overview">
                 <div className="timing-card">
-                  <h4>⏰ Time Overview</h4>
+                  <h4>Time Overview</h4>
                   <div className="timing-details">
                     <div className="timing-item">
                       <span className="timing-label">Start Time:</span>
@@ -1044,7 +1038,7 @@ const Results = ({ onError, onSuccess }) => {
                 </div>
 
                 <div className="timing-card">
-                  <h4>📊 Time Distribution</h4>
+                  <h4>Time Distribution</h4>
                   <div className="time-distribution">
                     {results.questionResults?.slice(0, 15).map((question, index) => {
                       const maxTime = Math.max(...(results.questionResults?.map(q => q.timeSpent || 0) || [1]));

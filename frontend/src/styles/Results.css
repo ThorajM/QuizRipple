@@ -507,7 +507,7 @@
   font-weight: 500;
 }
 
-/* Enhanced Performance Insights */
+ /* Enhanced Performance Insights */
 .insights-section {
   margin-bottom: var(--spacing-3xl);
 }
@@ -515,7 +515,7 @@
 .insights-section h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: rgb(15, 25, 49);
   margin-bottom: var(--spacing-lg);
   display: flex;
   align-items: center;
@@ -529,13 +529,14 @@
 }
 
 .insight-card {
-  background: var(--bg-white);
+   
   border-radius: var(--radius-md);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-sm);
   border-left: 4px solid;
   transition: all 0.3s ease;
   position: relative;
+  color: black;
 }
 
 .insight-card:hover {
@@ -572,16 +573,17 @@
 .insight-card h4 {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: black;
   margin: 0;
 }
 
 .insight-card p {
-  color: var(--text-secondary);
+  color: black;
   font-weight: 500;
   line-height: 1.6;
   margin: 0;
 }
+
 
 /* Advanced Statistics Section */
 .advanced-stats-section {
