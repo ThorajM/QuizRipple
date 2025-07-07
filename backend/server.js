@@ -12,6 +12,7 @@ const allowedOrigins = [
   process.env.CLIENT_ORIGIN,
   'https://quiz-ripple.vercel.app',
   'https://quiz-ripple-git-main-thoraj-ms-projects.vercel.app',
+  'https://quiz-ripple-ec9772emk-thoraj-ms-projects.vercel.app/',
   'http://localhost:3000',
   'http://localhost:3001'
 ];
