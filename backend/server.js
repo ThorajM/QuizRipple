@@ -10,8 +10,8 @@ const app = express();
 // Enhanced CORS configuration for Vercel + Render
 const allowedOrigins = [
   process.env.CLIENT_ORIGIN,
-  'https://your-app.vercel.app',
-  'https://your-app-git-main.vercel.app',
+  'https://quiz-ripple.vercel.app',
+  'https://quiz-ripple-git-main-thoraj-ms-projects.vercel.app',
   'http://localhost:3000',
   'http://localhost:3001'
 ];
